@@ -21,13 +21,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerLab.Core", "SRC\PowerL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleName", "SRC\Modules\ModuleName\ModuleName.csproj", "{6046D06A-D07C-403D-A87E-DACC6C2E7DFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerLab.UI.Core", "SRC\PowerLab.UI.Core\PowerLab.UI.Core.csproj", "{505BCFF7-D0F1-4686-8E4E-85827AD05C4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerLab.UI.Core", "SRC\PowerLab.UI.Core\PowerLab.UI.Core.csproj", "{505BCFF7-D0F1-4686-8E4E-85827AD05C4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerLab.Controls", "SRC\PowerLab.Controls\PowerLab.Controls.csproj", "{97B1C380-5AEA-4DB0-9FA9-22E522D6B649}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerLab.Controls", "SRC\PowerLab.Controls\PowerLab.Controls.csproj", "{97B1C380-5AEA-4DB0-9FA9-22E522D6B649}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TEST", "TEST", "{E8B440AF-2D4C-4CD5-A2F4-51283F2BC113}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerLab.Control.Tests", "TEST\PowerLab.Control.Tests\PowerLab.Control.Tests.csproj", "{0C574E77-FBB6-4E21-9044-A8A023AF68AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerLab.Control.Tests", "TEST\PowerLab.Control.Tests\PowerLab.Control.Tests.csproj", "{0C574E77-FBB6-4E21-9044-A8A023AF68AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

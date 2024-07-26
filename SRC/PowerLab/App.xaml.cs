@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Windows;
+using DryIoc;
 using PowerLab.Core.Native.Win32;
 using PowerLab.Core.Tools;
 using PowerLab.Modules.ModuleName;
@@ -24,7 +25,7 @@ namespace PowerLab
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterSingleton<IMessageService, MessageService>();
+            containerRegistry.RegisterSingleton<ILogService, SerilogService>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
@@ -32,38 +33,35 @@ namespace PowerLab
             moduleCatalog.AddModule<ModuleNameModule>();
         }
 
-        /// <summary>
-        /// 程序入口函数
-        /// </summary>
-        [STAThread] static void Main()
+        protected override void OnStartup(StartupEventArgs e)
         {
-            if (CheckAppIsRunning()) return;
-
-            var app = new App();
-            app.InitializeComponent();
-            app.Run();
+            base.OnStartup(e);
         }
 
         /// <summary>
-        /// 检查程序是否已经运行
+        /// 程序入口函数
         /// </summary>
-        /// <returns>True: </returns>
-        private static bool CheckAppIsRunning()
+        [STAThread]
+        static void Main()
         {
+            ILogService logger = new SerilogService();
+
             using var mutex = new Mutex(true, "E2A4C483-C59D-4856-BE14-F9B4AF07042C");
             if (!mutex.WaitOne(TimeSpan.Zero, true))
             {
                 IntPtr mainWindowHandle = Win32Helper.FindWindow(null, ApplicationResources.GetString("AppName"));
-
                 if (mainWindowHandle != IntPtr.Zero)
-                {
                     Win32Helper.SetForegroundWindow(mainWindowHandle);
-                }
 
-                return true;
+                logger.Debug("已有实例正在运行，正在退出程序。");
+                return;
             }
 
-            return false;
+            logger.Debug("程序开始启动");
+
+            var app = new App();
+            app.InitializeComponent();
+            app.Run();
         }
     }
 }
