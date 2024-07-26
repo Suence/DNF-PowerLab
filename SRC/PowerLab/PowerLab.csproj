@@ -9,7 +9,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modules\ModuleName\ModuleName.csproj" />
+    <ProjectReference Include="..\PowerLab.Controls\PowerLab.Controls.csproj" />
     <ProjectReference Include="..\PowerLab.Core\PowerLab.Core.csproj" />
+    <ProjectReference Include="..\PowerLab.UI.Core\PowerLab.UI.Core.csproj" />
     <ProjectReference Include="..\Services\PowerLab.Services.Interfaces\PowerLab.Services.Interfaces.csproj" />
     <ProjectReference Include="..\Services\PowerLab.Services\PowerLab.Services.csproj" />
   </ItemGroup>

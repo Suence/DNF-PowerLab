@@ -15,4 +15,4 @@ using System.Windows.Markup;
 [assembly: XmlnsDefinition("http://ui.powerlab.com/", "PowerLab.UI.Core.AttachedProperties")]
 [assembly: XmlnsDefinition("http://ui.powerlab.com/", "PowerLab.UI.Core.Tools")]
 [assembly: XmlnsDefinition("http://ui.powerlab.com/", "PowerLab.UI.Core.MarkupExtensions")]
-[assembly: XmlnsDefinition("http://ui.powerlab.com/", "PowerLab.UI.Core.Selectors")]
+//[assembly: XmlnsDefinition("http://ui.powerlab.com/", "PowerLab.UI.Core.Selectors")]

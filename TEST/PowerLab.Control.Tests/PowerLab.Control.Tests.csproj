@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\SRC\PowerLab.Controls\PowerLab.Controls.csproj" />
-    <ProjectReference Include="..\..\SRC\PowerLab.UI.Core\PowerLab.UI.Core.csproj" />
   </ItemGroup>
 
 </Project>
