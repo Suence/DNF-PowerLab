@@ -1,12 +1,11 @@
 ﻿using System;
-using PowerLab.Services.Interfaces;
 using Serilog;
 using Serilog.Core;
 using Serilog.Events;
 
 namespace PowerLab.Services
 {
-    public class SerilogService : ILogService
+    public class SerilogService : Core.Contracts.ILogger
     {
         #region private members
         private static string LogFilePath(string LogEvent) => $@"{Environment.CurrentDirectory}\Logs\{LogEvent}\log.log";

@@ -1,4 +1,7 @@
-﻿using Prism.Mvvm;
+﻿using System;
+using System.Diagnostics;
+using PowerLab.Core.Attributes;
+using Prism.Mvvm;
 
 namespace PowerLab.ViewModels
 {
@@ -6,7 +9,6 @@ namespace PowerLab.ViewModels
     {
         public MainWindowViewModel()
         {
-
         }
     }
 }

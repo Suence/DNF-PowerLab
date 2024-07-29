@@ -6,10 +6,11 @@
   </PropertyGroup>
   <ItemGroup>
     <ApplicationDefinition Remove="App.xaml" />
-	  <Page Include="App.xaml"/>
+	  <Page Include="App.xaml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+    <PackageReference Include="Rougamo.Fody" Version="3.1.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modules\ModuleName\ModuleName.csproj" />

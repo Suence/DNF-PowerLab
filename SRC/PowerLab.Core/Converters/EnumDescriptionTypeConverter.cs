@@ -5,8 +5,12 @@ using PowerLab.Core.Strings;
 
 namespace PowerLab.Core.Converters
 {
-    public class EnumDescriptionTypeConverter(Type type) : EnumConverter(type)
+    public class EnumDescriptionTypeConverter : EnumConverter
     {
+        public EnumDescriptionTypeConverter(Type type)
+            : base(type)
+        {
+        }
         public override object ConvertTo(ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType)
         {
             if (destinationType == typeof(string))

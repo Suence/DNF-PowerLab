@@ -1,9 +1,9 @@
-﻿namespace PowerLab.Services.Interfaces
+﻿namespace PowerLab.Core.Contracts
 {
     /// <summary>
     /// 日志服务
     /// </summary>
-    public interface ILogService
+    public interface ILogger
     {
         /// <summary>
         /// Debug 级别日志

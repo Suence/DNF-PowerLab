@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\PowerLab.Core\PowerLab.Core.csproj" />
     <ProjectReference Include="..\PowerLab.Services.Interfaces\PowerLab.Services.Interfaces.csproj" />
   </ItemGroup>
 

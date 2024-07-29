@@ -2,11 +2,12 @@
 using System.Threading;
 using System.Windows;
 using DryIoc;
+using PowerLab.Core.Attributes;
+using PowerLab.Core.Contracts;
 using PowerLab.Core.Native.Win32;
 using PowerLab.Core.Tools;
 using PowerLab.Modules.ModuleName;
 using PowerLab.Services;
-using PowerLab.Services.Interfaces;
 using PowerLab.Views;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -20,12 +21,13 @@ namespace PowerLab
     {
         protected override Window CreateShell()
         {
+            LoggingAttribute.Logger = Container.Resolve<ILogger>();
             return Container.Resolve<MainWindow>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterSingleton<ILogService, SerilogService>();
+            containerRegistry.RegisterSingleton<ILogger, SerilogService>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
@@ -44,7 +46,9 @@ namespace PowerLab
         [STAThread]
         static void Main()
         {
-            ILogService logger = new SerilogService();
+            var logger = new SerilogService();
+
+            logger.Debug("程序已启动");
 
             using var mutex = new Mutex(true, "E2A4C483-C59D-4856-BE14-F9B4AF07042C");
             if (!mutex.WaitOne(TimeSpan.Zero, true))
@@ -56,8 +60,7 @@ namespace PowerLab
                 logger.Debug("已有实例正在运行，正在退出程序。");
                 return;
             }
-
-            logger.Debug("程序开始启动");
+            logger = null;
 
             var app = new App();
             app.InitializeComponent();

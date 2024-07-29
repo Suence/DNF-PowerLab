@@ -1,7 +1,7 @@
 ﻿using System;
 using Prism.Regions;
 
-namespace PowerLab.Core.Mvvm
+namespace PowerLab.UI.Core.Mvvm
 {
     public class RegionViewModelBase : ViewModelBase, INavigationAware, IConfirmNavigationRequest
     {

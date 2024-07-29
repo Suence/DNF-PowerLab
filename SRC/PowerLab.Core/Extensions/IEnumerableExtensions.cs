@@ -7,7 +7,7 @@ namespace PowerLab.Core.Extensions
     public static class IEnumerableExtensions
     {
         public static ObservableCollection<T> ToObservableCollection<T>(this IEnumerable<T> @this)
-            => new(@this);
+            => new ObservableCollection<T>(@this);
 
         /// <summary>
         /// 对每个元素指定特定的动作
